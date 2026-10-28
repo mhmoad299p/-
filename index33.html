@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أحبك هبوشي ❤️ من محمود</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #1a0a0a 0%, #3d0c1a 30%, #1a0a2e 70%, #0a0a1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .hearts-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.3;
+    animation: floatUp linear infinite;
+    color: #ff4d6d;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-100px) rotate(360deg) scale(1.2); opacity: 0; }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .from-mahmoud {
+    font-size: 1.1rem;
+    color: #ff8fab;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease;
+  }
+
+  .intro-title {
+    font-size: clamp(2.8rem, 9vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff6b8a, #ff8fab, #ffb3c1, #ff6b8a);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease infinite, fadeInUp 1.2s ease;
+    margin-bottom: 15px;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .intro-subtitle {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    color: #ffb3c1;
+    margin-bottom: 25px;
+    animation: fadeInUp 1.5s ease 0.3s both;
+    line-height: 1.7;
+  }
+
+  .big-heart {
+    font-size: 90px;
+    animation: heartbeat 1.5s ease-in-out infinite, fadeInUp 1s ease 0.5s both;
+    filter: drop-shadow(0 0 25px #ff4d6d);
+    margin-bottom: 20px;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.25); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.18); }
+    60% { transform: scale(1); }
+  }
+
+  .music-box {
+    margin: 30px 0;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,107,138,0.3);
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    animation: fadeInUp 1.8s ease 0.7s both;
+  }
+
+  .music-box button {
+    background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .music-box button:hover { transform: scale(1.1); }
+
+  .music-info {
+    text-align: right;
+  }
+
+  .music-info .song {
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .music-info .artist {
+    font-size: 0.85rem;
+    color: #ffb3c1;
+  }
+
+  .scroll-hint {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #ff8fab;
+    animation: bounce 2s infinite, fadeInUp 2s ease 1s both;
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .languages-section { padding: 60px 0 80px; }
+
+  .section-title {
+    font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+    margin-bottom: 15px;
+    color: #ff8fab;
+  }
+
+  .lang-count {
+    color: #ffb3c1;
+    margin-bottom: 35px;
+    font-size: 1rem;
+  }
+
+  .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 0 8px;
+  }
+
+  .lang-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 107, 138, 0.2);
+    border-radius: 18px;
+    padding: 20px 16px;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .lang-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lang-card:hover {
+    transform: translateY(-7px) scale(1.03);
+    border-color: #ff6b8a;
+    box-shadow: 0 12px 35px rgba(255, 77, 109, 0.25);
+    background: rgba(255, 107, 138, 0.12);
+  }
+
+  .lang-flag { font-size: 1.7rem; margin-bottom: 8px; display: block; }
+  .lang-name { font-size: 0.85rem; color: #ff8fab; margin-bottom: 6px; font-weight: 600; }
+  .lang-phrase { font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; direction: auto; }
+
+  .lang-card.special {
+    background: linear-gradient(135deg, rgba(255, 77, 109, 0.25), rgba(255, 139, 171, 0.18));
+    border: 2px solid #ff6b8a;
+    grid-column: 1 / -1;
+    max-width: 380px;
+    margin: 0 auto 18px;
+  }
+
+  .lang-card.special .lang-phrase {
+    font-size: 1.7rem;
+    background: linear-gradient(90deg, #ff6b8a, #ffb3c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .final-message {
+    margin-top: 70px;
+    padding: 35px 25px;
+    background: rgba(255, 77, 109, 0.1);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 107, 138, 0.3);
+  }
+
+  .final-message h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    margin-bottom: 12px;
+    color: #ff8fab;
+  }
+
+  .final-message p {
+    font-size: 1.05rem;
+    color: #ffc2d1;
+    line-height: 1.75;
+  }
+
+  .credits {
+    margin-top: 50px;
+    padding: 25px;
+    font-size: 0.95rem;
+    color: #ff8fab;
+    border-top: 1px solid rgba(255,107,138,0.2);
+  }
+
+  .credits strong { color: #ffb3c1; }
+
+  @media (max-width: 600px) {
+    .languages-grid { grid-template-columns: 1fr; }
+    .lang-card.special { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsBg"></div>
+
+<div class="container">
+  <section class="intro">
+    <div class="from-mahmoud">✦ رسالة حب من محمود ✦</div>
+    <div class="big-heart">❤️</div>
+    <h1 class="intro-title">أحبك هبوشي</h1>
+    <p class="intro-subtitle">
+      بكل لغات العالم...<br>
+      أنتِ الأجمل في عيني
+    </p>
+
+    <div class="music-box">
+      <button id="playBtn" onclick="toggleMusic()">▶</button>
+      <div class="music-info">
+        <div class="song">موسيقى رومانسية</div>
+        <div class="artist">وائل جسار • خلفية</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" onclick="document.querySelector('.languages-section').scrollIntoView({behavior:'smooth'})">
+      ↓ اسحبي لأسفل وشوفي الحب بكل اللغات ↓
+    </div>
+  </section>
+
+  <section class="languages-section">
+    <h2 class="section-title">🌍 أحبك هبوشي... بكل لغات الدنيا</h2>
+    <p class="lang-count">أكثر من 80 لغة من كل أنحاء العالم</p>
+    
+    <div class="languages-grid" id="languagesGrid"></div>
+
+    <div class="final-message">
+      <h2>إلى هبوشي الغالية 💖</h2>
+      <p>
+        سواء قلناها بالعربية أو الفرنسية أو اليابانية أو أي لغة في العالم...<br>
+        المعنى واحد: أنتِ الأهم، وأنتِ الأجمل، وأنا أحبك بكل اللغات الموجودة... واللي لسا ما اكتشفتش بعد ❤️
+      </p>
+    </div>
+
+    <div class="credits">
+      <p>صُنع بكل حب من <strong>محمود</strong></p>
+      <p style="margin-top:8px; font-size:0.85rem; opacity:0.8;">تصميم وتنفيذ: Grok • xAI</p>
+    </div>
+  </section>
+</div>
+
+<!-- Music: uses song.mp3 if present, otherwise YouTube -->
+<audio id="localAudio" src="song.mp3" loop preload="none"></audio>
+<div style="position:fixed;left:-10px;bottom:-10px;width:2px;height:2px;opacity:0;pointer-events:none;overflow:hidden;">
+  <div id="ytplayer"></div>
+</div>
+
+<script>
+  // Floating hearts
+  const heartsBg = document.getElementById('heartsBg');
+  const heartSymbols = ['❤️','💕','💗','💓','💖','💘','💝','💞'];
+  
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 18 + 14) + 'px';
+    heart.style.animationDuration = (Math.random() * 8 + 9) + 's';
+    heart.style.animationDelay = Math.random() * 4 + 's';
+    heartsBg.appendChild(heart);
+    setTimeout(() => heart.remove(), 17000);
+  }
+  for (let i = 0; i < 22; i++) setTimeout(createHeart, i * 280);
+  setInterval(createHeart, 700);
+
+  // Music control
+  const VIDEO_ID = 'bu5unHpGcIU';
+  let isPlaying = false;
+  let useYT = false;
+  let ytPlayer = null;
+  let ytReady = false;
+  let wantPlay = false;
+  const playBtn = document.getElementById('playBtn');
+  const localAudio = document.getElementById('localAudio');
+
+  function setPlaying(v) {
+    isPlaying = v;
+    playBtn.textContent = v ? '❚❚' : '▶';
+  }
+
+  function loadYT() {
+    if (window.YT && window.YT.Player) { initYT(); return; }
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+    window.onYouTubeIframeAPIReady = initYT;
+  }
+
+  function initYT() {
+    if (ytPlayer) return;
+    ytPlayer = new YT.Player('ytplayer', {
+      width: '200', height: '200',
+      videoId: VIDEO_ID,
+      playerVars: { playsinline: 1, loop: 1, playlist: VIDEO_ID, controls: 0 },
+      events: {
+        onReady: () => { ytReady = true; if (wantPlay) ytPlayer.playVideo(); },
+        onError: () => { setPlaying(false); alert('تعذّر تشغيل الموسيقى من يوتيوب. جرّبي إضافة ملف song.mp3 بجانب الصفحة.'); }
+      }
+    });
+  }
+
+  function toggleMusic() {
+    if (isPlaying) {
+      wantPlay = false;
+      if (useYT && ytReady) ytPlayer.pauseVideo(); else localAudio.pause();
+      setPlaying(false);
+      return;
+    }
+    wantPlay = true;
+    if (!useYT) {
+      localAudio.play().then(() => setPlaying(true)).catch(() => {
+        // no song.mp3 -> fall back to YouTube
+        useYT = true;
+        setPlaying(true);
+        loadYT();
+      });
+    } else {
+      setPlaying(true);
+      if (ytReady) ytPlayer.playVideo(); else loadYT();
+    }
+  }
+
+  // Languages - expanded list
+  const languages = [
+    { flag: "🇸🇦", name: "العربية", phrase: "أحبك هبوشي" },
+    { flag: "🇬🇧", name: "English", phrase: "I love you Haboushi" },
+    { flag: "🇫🇷", name: "Français", phrase: "Je t'aime Haboushi" },
+    { flag: "🇪🇸", name: "Español", phrase: "Te amo Haboushi" },
+    { flag: "🇮🇹", name: "Italiano", phrase: "Ti amo Haboushi" },
+    { flag: "🇩🇪", name: "Deutsch", phrase: "Ich liebe dich Haboushi" },
+    { flag: "🇵🇹", name: "Português", phrase: "Eu te amo Haboushi" },
+    { flag: "🇷🇺", name: "Русский", phrase: "Я тебя люблю Хабуши" },
+    { flag: "🇯🇵", name: "日本語", phrase: "愛してる ハブーシ" },
+    { flag: "🇰🇷", name: "한국어", phrase: "사랑해 하부시" },
+    { flag: "🇨🇳", name: "中文 (普通话)", phrase: "我爱你 哈布希" },
+    { flag: "🇭🇰", name: "廣東話", phrase: "我愛你 哈布希" },
+    { flag: "🇹🇷", name: "Türkçe", phrase: "Seni seviyorum Haboushi" },
+    { flag: "🇮🇳", name: "हिन्दी", phrase: "मैं तुमसे प्यार करता हूँ हबूशी" },
+    { flag: "🇳🇱", name: "Nederlands", phrase: "Ik hou van jou Haboushi" },
+    { flag: "🇸🇪", name: "Svenska", phrase: "Jag älskar dig Haboushi" },
+    { flag: "🇵🇱", name: "Polski", phrase: "Kocham cię Haboushi" },
+    { flag: "🇬🇷", name: "Ελληνικά", phrase: "Σ' αγαπώ Χαμπούσι" },
+    { flag: "🇮🇱", name: "עברית", phrase: "אני אוהב אותך חבושי" },
+    { flag: "🇮🇷", name: "فارسی", phrase: "دوستت دارم هبوشی" },
+    { flag: "🇹🇭", name: "ไทย", phrase: "ฉันรักคุณ ฮาบูชิ" },
+    { flag: "🇻🇳", name: "Tiếng Việt", phrase: "Anh yêu em Haboushi" },
+    { flag: "🇮🇩", name: "Bahasa Indonesia", phrase: "Aku cinta kamu Haboushi" },
+    { flag: "🇵🇭", name: "Filipino", phrase: "Mahal kita Haboushi" },
+    { flag: "🇺🇦", name: "Українська", phrase: "Я тебе кохаю Хабуші" },
+    { flag: "🇷🇴", name: "Română", phrase: "Te iubesc Haboushi" },
+    { flag: "🇭🇺", name: "Magyar", phrase: "Szeretlek Haboushi" },
+    { flag: "🇫🇮", name: "Suomi", phrase: "Minä rakastan sinua Haboushi" },
+    { flag: "🇳🇴", name: "Norsk", phrase: "Jeg elsker deg Haboushi" },
+    { flag: "🇩🇰", name: "Dansk", phrase: "Jeg elsker dig Haboushi" },
+    { flag: "🇨🇿", name: "Čeština", phrase: "Miluji tě Haboushi" },
+    { flag: "🇸🇰", name: "Slovenčina", phrase: "Ľúbim ťa Haboushi" },
+    { flag: "🇧🇬", name: "Български", phrase: "Обичам те Хабуши" },
+    { flag: "🇭🇷", name: "Hrvatski", phrase: "Volim te Haboushi" },
+    { flag: "🇷🇸", name: "Српски", phrase: "Волим те Хабуши" },
+    { flag: "🇱🇹", name: "Lietuvių", phrase: "Aš tave myliu Haboushi" },
+    { flag: "🇱🇻", name: "Latviešu", phrase: "Es tevi mīlu Haboushi" },
+    { flag: "🇪🇪", name: "Eesti", phrase: "Ma armastan sind Haboushi" },
+    { flag: "🇮🇸", name: "Íslenska", phrase: "Ég elska þig Haboushi" },
+    { flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿", name: "Cymraeg", phrase: "Rwy'n dy garu di Haboushi" },
+    { flag: "🇮🇪", name: "Gaeilge", phrase: "Tá grá agam duit Haboushi" },
+    { flag: "🇰🇪", name: "Kiswahili", phrase: "Nakupenda Haboushi" },
+    { flag: "🇳🇬", name: "Yorùbá", phrase: "Mo nífẹ́ẹ́ rẹ Haboushi" },
+    { flag: "🇿🇦", name: "isiZulu", phrase: "Ngiyakuthanda Haboushi" },
+    { flag: "🇪🇹", name: "አማርኛ", phrase: "እወድሻለሁ ሃቡሺ" },
+    { flag: "🇧🇩", name: "বাংলা", phrase: "আমি তোমাকে ভালোবাসি হাবুশি" },
+    { flag: "🇵🇰", name: "اردو", phrase: "میں تم سے محبت کرتا ہوں ہبوشی" },
+    { flag: "🇲🇾", name: "Bahasa Melayu", phrase: "Saya cinta kamu Haboushi" },
+    { flag: "🇳🇵", name: "नेपाली", phrase: "म तिमीलाई माया गर्छु हबूशी" },
+    { flag: "🇲🇲", name: "မြန်မာ", phrase: "မင်းကိုချစ်တယ် ဟာဘူရှိ" },
+    { flag: "🇰🇭", name: "ភាសាខ្មែរ", phrase: "ខ្ញុំស្រលាញ់អ្នក ហាប៊ូស៊ី" },
+    { flag: "🇦🇲", name: "Հայերեն", phrase: "Ես քեզ սիրում եմ Հաբուշի" },
+    { flag: "🇬🇪", name: "ქართული", phrase: "მიყვარხარ ჰაბუში" },
+    { flag: "🇦🇱", name: "Shqip", phrase: "Të dua Haboushi" },
+    { flag: "🇲🇹", name: "Malti", phrase: "Inħobbok Haboushi" },
+    { flag: "🇪🇸", name: "Català", phrase: "T'estimo Haboushi" },
+    { flag: "🇪🇸", name: "Euskara", phrase: "Maite zaitut Haboushi" },
+    { flag: "🇼🇸", name: "Gagana Samoa", phrase: "Ou te alofa ia te oe Haboushi" },
+    { flag: "🇳🇿", name: "Te Reo Māori", phrase: "Aroha ana ahau ki a koe Haboushi" },
+    { flag: "🇺🇸", name: "ʻŌlelo Hawaiʻi", phrase: "Aloha wau ia ʻoe Haboushi" },
+    { flag: "🌍", name: "Esperanto", phrase: "Mi amas vin Haboushi" },
+    { flag: "🏛️", name: "Latina", phrase: "Te amo Haboushi" },
+    { flag: "🇦🇿", name: "Azərbaycan", phrase: "Mən səni sevirəm Haboushi" },
+    { flag: "🇰🇿", name: "Қазақша", phrase: "Мен сені жақсы көремін Хабуши" },
+    { flag: "🇺🇿", name: "Oʻzbekcha", phrase: "Men seni sevaman Haboushi" },
+    { flag: "🇹🇯", name: "Тоҷикӣ", phrase: "Ман туро дӯст медорам Ҳабушӣ" },
+    { flag: "🇰🇬", name: "Кыргызча", phrase: "Мен сени сүйөм Хабуши" },
+    { flag: "🇲🇳", name: "Монгол", phrase: "Би чамд хайртай Хабуши" },
+    { flag: "🇱🇰", name: "සිංහල", phrase: "මම ඔයාට ආදරෙයි හබූෂි" },
+    { flag: "🇮🇳", name: "தமிழ்", phrase: "நான் உன்னை காதலிக்கிறேன் ஹபூஷி" },
+    { flag: "🇮🇳", name: "తెలుగు", phrase: "నేను నిన్ను ప్రేమిస్తున్నాను హబూషి" },
+    { flag: "🇮🇳", name: "ಕನ್ನಡ", phrase: "ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ ಹಬೂಷಿ" },
+    { flag: "🇮🇳", name: "മലയാളം", phrase: "ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു ഹബൂഷി" },
+    { flag: "🇮🇳", name: "ਪੰਜਾਬੀ", phrase: "ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ ਹਬੂਸ਼ੀ" },
+    { flag: "🇮🇳", name: "ગુજરાતી", phrase: "હું તને પ્રેમ કરું છું હબૂશી" },
+    { flag: "🇮🇳", name: "मराठी", phrase: "मी तुझ्यावर प्रेम करतो हबूशी" },
+    { flag: "🇸🇴", name: "Soomaali", phrase: "Waan ku jeclahay Haboushi" },
+    { flag: "🇸🇳", name: "Wolof", phrase: "Damay la bëgg Haboushi" },
+    { flag: "🇬🇭", name: "Twi", phrase: "Me dɔ wo Haboushi" },
+    { flag: "🇿🇼", name: "Shona", phrase: "Ndinokuda Haboushi" },
+    { flag: "🇲🇬", name: "Malagasy", phrase: "Tiako ianao Haboushi" },
+    { flag: "🇭🇹", name: "Kreyòl Ayisyen", phrase: "Mwen renmen ou Haboushi" },
+    { flag: "🇨🇺", name: "Cubano", phrase: "Te quiero Haboushi" },
+    { flag: "🇦🇷", name: "Argentino", phrase: "Te amo Haboushi" },
+    { flag: "🇲🇽", name: "Mexicano", phrase: "Te quiero mucho Haboushi" },
+    { flag: "🇧🇷", name: "Brasileiro", phrase: "Eu te amo Haboushi" },
+    { flag: "🇵🇹", name: "Europeu", phrase: "Amo-te Haboushi" },
+    { flag: "🇧🇪", name: "Vlaams", phrase: "Ik zie je graag Haboushi" },
+    { flag: "🇨🇭", name: "Schweizerdeutsch", phrase: "Ich lieb di Haboushi" },
+    { flag: "🇦🇹", name: "Österreichisch", phrase: "I liab di Haboushi" }
+  ];
+
+  const grid = document.getElementById('languagesGrid');
+  languages.forEach((lang, index) => {
+    const card = document.createElement('div');
+    card.className = 'lang-card' + (index === 0 ? ' special' : '');
+    card.innerHTML = `
+      <span class="lang-flag">${lang.flag}</span>
+      <div class="lang-name">${lang.name}</div>
+      <div class="lang-phrase">${lang.phrase}</div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Array.from(grid.children).indexOf(entry.target);
+        setTimeout(() => entry.target.classList.add('visible'), (idx % 8) * 60);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.lang-card').forEach(card => observer.observe(card));
+</script>
+</body>
+</html>
